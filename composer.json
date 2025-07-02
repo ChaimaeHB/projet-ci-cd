@@ -1,4 +1,4 @@
- {
+{
   "name": "chaimae/projet-ci-cd",
   "description": "projet avec composer",
   "type": "project",
@@ -16,14 +16,14 @@
   ],
   "minimum-stability": "stable",
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^3.76",
-    "phpstan/phpstan": "^1.2",
-    "phpunit/phpunit": "^12.2"
+    "friendsofphp/php-cs-fixer": "^3",
+    "phpunit/phpunit": "^10",
+    "phpstan/phpstan": "^1.11"
   },
   "scripts": {
     "lint": "php-cs-fixer fix src/ --dry-run --diff",
     "analyse": "phpstan analyse src",
-    "test": "phpunit",
+    "test": "phpunit --coverage-html build/coverage",
     "check": [
       "@lint",
       "@analyse",
@@ -31,4 +31,3 @@
     ]
   }
 }
-
