@@ -36,3 +36,12 @@ jobs:
           name: coverage-report
           path: build/coverage
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Simulate deployment
+        run: echo "✅ Déploiement simulé vers la production sur master"
+
