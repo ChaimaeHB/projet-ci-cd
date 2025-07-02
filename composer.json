@@ -23,7 +23,7 @@
   "scripts": {
     "lint": "php-cs-fixer fix src/ --dry-run --diff",
     "analyse": "phpstan analyse src",
-    "test": "phpunit --coverage-html build/coverage",
+    "test": "phpunit --coverage-html build/coverage --coverage-filter=src",
     "check": [
       "@lint",
       "@analyse",
